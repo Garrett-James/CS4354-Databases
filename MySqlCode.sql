@@ -19,5 +19,7 @@ CREATE TABLE `stateproduction` (
   `state` varchar(45) NOT NULL,
   `yield` double NOT NULL,
   `bearingAcre` double NOT NULL,
-  PRIMARY KEY (`year`,`state`)
+  PRIMARY KEY (`year`,`state`),
+  CONSTRAINT CHK_State CHECK (state  = 'arizona' or state = 'california' or 
+  state = 'florida' or state = 'texas')
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8
